@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jeu sur javascript</title>
+  <link rel="stylesheet" href="jeu.css">
+</head>
+<body>
+
+
+
+  <script>
+    var num = Math.floor(Math.random() * 100) + 1;
+    var NbEssais = 0;
+    function Devine() {
+      var choisi = document.form1.devine1.value;
+      NbEssais++;
+      status = "Nombre d'essais : " + NbEssais;
+      if (choisi < num)
+        document.form1.indice.value = "Non, le nombre est plus grand.";
+      if (choisi > num)
+        document.form1.indice.value = "Non, le nombre est plus petit.";
+      if (choisi == num) {
+        window.alert("Correct ! Vous avez trouvé en " + NbEssais + "essais.");
+        location.reload();
+      }
+      if (NbEssais == 10) {
+        window.alert("Désolé, c'est fini. Le nombre correct était : " + num);
+        location.reload();
+      }
+    }
+  </script>
+</head>
+
+  <body>
+    <h1><font color="red">Trouver le bon nombre</font></h1>
+    <hr>
+    <p>Vous devez trouver un nombre entre 1 et 100. Vous n'avez que 10 essais.<br>
+    Faites vos</p>
+    <form NAME="form1">
+      <input TYPE="text" SIZE=30 NAME="indice" VALUE="Entrez votre nombre.">
+      <br><br><br><br>
+      <b>Votre choix :</b>
+      <input TYPE="text" NAME="devine1">
+      <input TYPE="BUTTON" VALUE="Essayer" onClick="Devine();">
+    </form>
+
+
+
+  </body>
+  </html>
