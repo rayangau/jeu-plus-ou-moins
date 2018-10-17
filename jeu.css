@@ -1,0 +1,18 @@
+body{
+  background-image: url('img_jeu.jpg');
+  background-repeat: no-repeat;
+  margin-top: 20%;
+  margin-left: 10%;
+  background-color: black
+
+}
+b{
+  color: orange;
+  size:30px;
+}
+p{
+  font-size: 20px
+}
+input{
+  size:20px;
+}
